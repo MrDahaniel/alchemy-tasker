@@ -6,10 +6,8 @@ defmodule AlchemyTasker.Tasklist do
     field :description, :string
     field :name, :string
     field :tags, {:array, :string}
-    field :finished_id, :integer
-    field :unfinished_id, :integer
-    has_many :finished_task, AlchemyTasker.Task, foreign_key: :finished_id, references: :id
-    has_many :unfinished_task, AlchemyTasker.Task, foreign_key: :unfinished_id, references: :id
+    has_many :finished_task, AlchemyTasker.Task
+    has_many :unfinished_task, AlchemyTasker.Task
 
     timestamps()
   end
