@@ -6,16 +6,18 @@ defmodule AlchemyTasker.Tasklist do
     field :description, :string
     field :name, :string
     field :tags, {:array, :string}
-    has_many :finished_task, AlchemyTasker.Task
-    has_many :unfinished_task, AlchemyTasker.Task
 
     timestamps()
+
+    belongs_to :user, AlchemyTasker.User 
+
+    has_many :tasks, AlchemyTasker.Task
   end
 
   @doc false
   def changeset(tasklist, attrs) do
     tasklist
     |> cast(attrs, [:name, :tags, :description])
-    |> validate_required([:name, :tags, :description])
+    |> validate_required([:name])
   end
 end
