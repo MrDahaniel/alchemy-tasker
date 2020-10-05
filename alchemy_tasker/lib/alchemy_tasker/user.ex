@@ -10,12 +10,41 @@ defmodule AlchemyTasker.User do
     field :password_hash, :string
 
     timestamps()
+
+    has_many :tasklists, AlchemyTasker.Tasklist
   end
 
   @doc false
+  # Basic changeset for name, username and email, verifies username lenght and email format
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:name, :username, :email, :password, :password_hash])
-    |> validate_required([:name, :username, :email, :password, :password_hash])
+    |> cast(attrs, [:name, :username, :email])
+    |> validate_required([:name, :username, :email])
+    |> validate_length(:name, min: 1, max: 50)
+    |> validate_length(:username, min: 4, max: 20)
+    |> validate_format(:email, ~r/@/)
+    |> unique_constraint(:username)
+    |> unique_constraint(:email)
+    |> cast(attrs, [:password])
+    |> validate_length(:password, min: 8, max: 20)
   end
+
+  defp hash_pass(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do
+    put_change(changeset, :password_hash, Argon2.hash_pwd_salt(password))
+  end
+
+  defp hash_pass(changeset) do
+    changeset
+  end
+
+  def registration_changeset(user, attrs) do
+    user 
+    |> changeset(attrs)
+    |> hash_pass
+  end
+
+  def verify_user(_user) do
+    :peepeepoopoo
+  end
+
 end

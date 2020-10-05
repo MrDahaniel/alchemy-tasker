@@ -2,12 +2,12 @@ use Mix.Config
 
 # Configure your database
 config :alchemy_tasker, AlchemyTasker.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "alchemy_tasker_dev",
-  hostname: "localhost",
+  username: "ogiarsxv",
+  password: "U6n5XJI6zB23nZO7Hi1HW7mlF4T8WZbh",
+  database: "ogiarsxv",
+  hostname: "lallah.db.elephantsql.com",
   show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  pool_size: 1
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
