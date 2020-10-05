@@ -25,16 +25,12 @@ defmodule AlchemyTasker.User do
     |> validate_format(:email, ~r/@/)
     |> unique_constraint(:username)
     |> unique_constraint(:email)
-  end
-
-  def password_changeset(user, attrs) do
-    user
     |> cast(attrs, [:password])
     |> validate_length(:password, min: 8, max: 20)
   end
 
-  defp hash_pass(%{valid?: true, password: password} = changeset) do
-    change(changeset, Argon2.add_hash(password))
+  defp hash_pass(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do
+    put_change(changeset, :password_hash, Argon2.hash_pwd_salt(password))
   end
 
   defp hash_pass(changeset) do
@@ -44,7 +40,6 @@ defmodule AlchemyTasker.User do
   def registration_changeset(user, attrs) do
     user 
     |> changeset(attrs)
-    |> password_changeset(attrs)
     |> hash_pass
   end
 
