@@ -17,7 +17,7 @@ defmodule AlchemyTaskerWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/users", UserController, :new
+    #get "/users", UserController, :new
   end
 
   # Other scopes may use custom stacks.
