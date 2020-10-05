@@ -1,5 +1,5 @@
 defmodule AlchemyTaskerWeb.UserController do
-    user AlchemyTaskerWeb, :controller
+    use AlchemyTaskerWeb, :controller
 
     def new(_conn, _params) do
         :nothing
