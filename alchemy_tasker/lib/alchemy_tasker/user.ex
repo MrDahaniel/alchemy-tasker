@@ -26,4 +26,30 @@ defmodule AlchemyTasker.User do
     |> unique_constraint(:username)
     |> unique_constraint(:email)
   end
+
+  def password_changeset(user, attrs) do
+    user
+    |> cast(attrs, [:password])
+    |> validate_length(:password, min: 8, max: 20)
+  end
+
+  defp hash_pass(%{valid?: true, password: password} = changeset) do
+    change(changeset, Argon2.add_hash(password))
+  end
+
+  defp hash_pass(changeset) do
+    changeset
+  end
+
+  def registration_changeset(user, attrs) do
+    user 
+    |> changeset(attrs)
+    |> password_changeset(attrs)
+    |> hash_pass
+  end
+
+  def verify_user(_user) do
+    :peepeepoopoo
+  end
+
 end
