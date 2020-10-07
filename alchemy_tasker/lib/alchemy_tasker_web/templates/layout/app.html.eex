@@ -4,30 +4,53 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>AlchemyTasker · Phoenix Framework</title>
+    <title>Alchemy Lobby</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <!-- alchemy CSS -->
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/styles.css") %>" />
+    <!-- favicon -->
+    <link rel="favicon.ico" type="image/x-icon" href="<%= Routes.static_path(@conn, "/favicon.ico") %>" />
+    <link rel="manifest" href="/manifest.json">
+    <!-- javascript route -->
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body>
-    <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
-        </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
-      </section>
-    </header>
-    <main role="main" class="container">
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-      <%= @inner_content %>
-    </main>
+    <div class="mainframe" id="main">
+      <div class="info-text">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <img src="<%= Routes.static_path(@conn, "/images/alchemy.png") %>" id="logo">
+      <h1>Your task manager</h1>
+      <hr>
+      <p>Alchemy allows you to keep track of your daily tasks, as well as structure them in such a way
+        your tasks are there for you to quickly check them, complete them, etc.
+      </p>
+    </div class="animation-area">
+    <ul class="sq-area">
+      <!-- 6 squares -->
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    </div>
+    <h1 id="welcome">
+      Welcome
+    </h1>
+    <button class="start">
+      Start Alchemy
+    </button>
   </body>
 </html>
