@@ -1,9 +1,3 @@
-<section class="phx-hero">
-  <h1></h1>
-  <p></p>
-</section>
-
-<section class="row">
-  <article class="column">
-  </article>
-</section>
+<div class="center">
+	<button class="center-button">Fuck CSS and HTML</button>
+</div>

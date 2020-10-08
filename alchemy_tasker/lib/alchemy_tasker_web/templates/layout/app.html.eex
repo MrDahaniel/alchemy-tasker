@@ -6,51 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Alchemy Lobby</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
-    <!-- alchemy CSS -->
-    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/styles.css") %>" />
     <!-- favicon -->
     <link rel="favicon.ico" type="image/x-icon" href="<%= Routes.static_path(@conn, "/favicon.ico") %>" />
-    <link rel="manifest" href="/manifest.json">
     <!-- javascript route -->
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body>
-    <div class="mainframe" id="main">
-      <div class="info-text">
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
+    <header>
+      <div class="header-container">
+        <div class="alchemy-logo" style="text-align: center;"><a href="/"><img src="<%= Routes.static_path(@conn, "/images/alchemy.png") %>"></a></div>
+        <div class="blankspace"></div>
+        <div><button class="header-button">Home</button></div>
+        <div><button class="header-button">About</button></div>
+        <div><button class="header-button">Login</button></div>
       </div>
-      <img src="<%= Routes.static_path(@conn, "/images/alchemy.png") %>" id="logo">
-      <h1>Your task manager</h1>
-      <hr>
-      <p>Alchemy allows you to keep track of your daily tasks, as well as structure them in such a way
-        your tasks are there for you to quickly check them, complete them, etc.
-      </p>
-    </div class="animation-area">
-    <ul class="sq-area">
-      <!-- 6 squares -->
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    </header>
+
+    <div class="animation-area">
+      <ul class="sq-area">
+        <!-- 6 squares -->
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
-    <h1 id="welcome">
-      Welcome
-    </h1>
-    <button class="start">
-      Start Alchemy
-    </button>
+      <%= @inner_content %>
   </body>
 </html>
