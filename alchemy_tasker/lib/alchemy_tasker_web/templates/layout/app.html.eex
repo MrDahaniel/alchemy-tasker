@@ -14,11 +14,11 @@
   <body>
     <header>
       <div class="header-container">
-        <div class="alchemy-logo" style="text-align: center;"><a href="/"><img src="<%= Routes.static_path(@conn, "/images/alchemy.png") %>"></a></div>
+        <div class="alchemy-header" style="text-align: center;"><a href="/"><img src="<%= Routes.static_path(@conn, "/images/Alchemy.png") %>"></a></div>
         <div class="blankspace"></div>
         <div><button class="header-button">Home</button></div>
-        <div><button class="header-button">About</button></div>
         <div><button class="header-button">Login</button></div>
+        <div><button class="header-button">About</button></div>
       </div>
     </header>
 
