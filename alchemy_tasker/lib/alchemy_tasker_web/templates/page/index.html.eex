@@ -3,10 +3,10 @@
 		<h1 class="sub-header__title"><b>Your task manager</b></h1>
 		<p class="sub-header__text">
 			Alchemy allows you to keep track of your daily tasks, as well as structure them in such a way
-			your tasks are there for you to quickly check them and complete them.
+			your tasks are there for you to quickly check them, complete them, etc.
 		</p>
 	</div>
 	<div class="container-box">
-		<p class="center-full">This is meant to have a video/gif showing example use of Alchemy or an interactive example task list</p>
+		<p class="center-full">This is meant to have a video/gif showing example use of Alchemy</div>
 	</div>
 </div>

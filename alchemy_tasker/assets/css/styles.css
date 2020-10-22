@@ -18,19 +18,19 @@ h1 {
 }
 p{
   font-weight: 300;
-  font-size: 2rem;
+  font-size: 18px;
   color: whitesmoke;
   text-align: justify;
   font-family: Tahoma, sans-serif;
 }
 a{
-  font-size: 2rem;
+  font-size: 18px;
   color: whitesmoke;
   font-family: Tahoma, sans-serif;
   text-decoration: none;
 }
 a:hover{
-  font-size: 2rem;
+  font-size: 18px;
   text-decoration: underline;
 }
 img {
@@ -164,7 +164,7 @@ hr{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 3%;
+  margin-top: 7%;
 }
 .item{ /* note this item may be any item within a container */
   align-self: center;
@@ -231,22 +231,25 @@ hr{
   top: 50%;     
   left: 50%;     
   margin-right: -50%;              
-  transform: translate(-50%, -50%); 
-  color: black;
-  text-align: center;
+  transform: translate(-50%, -50%)
 }
 /* temporal */
 .container-box{
   position: relative;
   width: 800px;
-  background-color: gray;
-  border: 15px solid gray;
+  background-color: #606c76;
+  border: 15px solid #606c76;
   height: 700px;
   border-radius: 20px;
   margin-right: 10%;
   opacity: 0.3;
 }
 
+/*delete later*/
+.rainbow-bg{
+    animation: rainbow-bg 2.5s linear;
+    animation-iteration-count: infinite;
+}
 .sub-header{
   width: 30%;
   margin: 10px;
@@ -255,22 +258,15 @@ hr{
   object-position: left;
 }
 .sub-header__title{
-  font-size: 4rem;
+  font-size: 50px;
   text-align: left;
   margin-bottom: 50px;
   color: black;
 }
 .sub-header__text{
-  font-size: 2rem;
+  font-size: 30px;
   color: gray;
 }
-
-/*delete later*/
-.rainbow-bg{
-    animation: rainbow-bg 2.5s linear;
-    animation-iteration-count: infinite;
-}
-
 @keyframes rainbow-bg{
     100%,0%{
       background-color: rgb(255,0,0);
