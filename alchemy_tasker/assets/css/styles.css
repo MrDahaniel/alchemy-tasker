@@ -12,7 +12,7 @@ body {
 }
 h1 {
   font-size: 28px;
-  color: whitesmoke;
+  color: gray;
   text-align: center;
   font-family: "Segoe UI", Georgia, Serif;
 }
@@ -191,24 +191,30 @@ hr{
 /*Index or homepage css*/
 
 .center-button {
-  display: inline-block;
+  display: block;
   font-size: 22px;
   text-align: center;
-  background-color: teal;
   margin-left: auto;
   margin-right: auto;
-  width: 100%
+  width: 30%;
+  background-color: #640228;
+  border-radius: 10px;
+  border: none;
+  color: whitesmoke;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
 }
 
 .center-button:hover {
-  display: inline-block;
+  display: block;
   font-size: 22px;
   text-align: center;
-  animation: rainbow-bg 2.5s linear;
-  animation-iteration-count: infinite;
   margin-left: auto;
   margin-right: auto;
-  width: 100%
+  width: 30%
+
 }
 
 .center-vertically{
@@ -244,12 +250,6 @@ hr{
   margin-right: 10%;
   opacity: 0.3;
 }
-
-/*delete later*/
-.rainbow-bg{
-    animation: rainbow-bg 2.5s linear;
-    animation-iteration-count: infinite;
-}
 .sub-header{
   width: 30%;
   margin: 10px;
@@ -263,6 +263,25 @@ hr{
   margin-bottom: 50px;
   color: black;
 }
+.form-group{
+  width: 40%;
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  vertical-align: center;
+}
+.reg_header{
+  text-align: center;
+  font-size: 3rem;
+ }
+
+/*delete later*/
+.rainbow-bg{
+    animation: rainbow-bg 2.5s linear;
+    animation-iteration-count: infinite;
+}
+
 .sub-header__text{
   font-size: 30px;
   color: gray;
@@ -304,4 +323,24 @@ hr{
     91%{
       background-color: rgb(255,0,127);
     }
+}
+
+/*reg error*/
+
+.alert-error{
+  width: 35%;
+  display: block;
+  background-color: #F73E3E;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px
+}
+
+.alert-text{
+  text-align: center;
+  color: whitesmoke;
 }

@@ -16,9 +16,10 @@
       <div class="header-container">
         <div class="alchemy-header" style="text-align: center;"><a href="/"><img src="<%= Routes.static_path(@conn, "/images/Alchemy.png") %>"></a></div>
         <div class="blankspace"></div>
-        <div><button class="header-button">Home</button></div>
-        <div><button class="header-button">Login</button></div>
-        <div><button class="header-button">About</button></div>
+        <div><button class="header-button"><a href="home">Home</a></button></div>
+        <div><button class="header-button"><a href="#">About</a></button></div>
+        <div><button class="header-button"><a href="#">Login</a></button></div>
+        <div><button class="header-button"><a href="reg/new">Register</a></button></div>
       </div>
     </header>
 

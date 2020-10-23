@@ -7,7 +7,9 @@ defmodule AlchemyTasker.User do
     field :username, :string
     field :name, :string
     field :password, :string, virtual: true
+    field :password_confirmation, :string, virtual: true
     field :password_hash, :string
+    field :login_token, :string
 
     timestamps()
 
@@ -22,9 +24,9 @@ defmodule AlchemyTasker.User do
     |> validate_required([:name, :username, :email])
     |> validate_length(:name, min: 1, max: 50)
     |> validate_length(:username, min: 4, max: 20)
-    |> validate_format(:email, ~r/@/)
-    |> unique_constraint(:username)
-    |> unique_constraint(:email)
+    |> validate_format(:email, ~r/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
+    |> unique_constraint(:username, name: :users_lower_username_index)
+    |> unique_constraint(:email, name: :users_lower_email_index)
     |> cast(attrs, [:password])
     |> validate_length(:password, min: 8, max: 20)
   end
@@ -40,11 +42,12 @@ defmodule AlchemyTasker.User do
   def registration_changeset(user, attrs) do
     user 
     |> changeset(attrs)
+    |> validate_required(:password)
     |> hash_pass
   end
 
-  def verify_user(_user) do
-    :peepeepoopoo
+  def verify_user(%AlchemyTasker.User{} = user, input_password) do
+    Argon2.verify_pass(user, input_password)
   end
 
 end
